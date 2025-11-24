@@ -36,6 +36,10 @@ async function getKomikById(database, id) {
         throw new Error('Komik tidak ditemukan');
     }
 
+    if (komik.imageData) {
+        komik.imageData = komik.imageData.toString('base64');
+    }
+
     return komik;
 }
 
